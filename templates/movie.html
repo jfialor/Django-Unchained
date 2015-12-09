@@ -1,0 +1,263 @@
+	{% extends "base.html" %} {% import 'macros.html' as macros %} 
+	{% block content %}
+
+
+	<div class="col-md-3">
+
+
+	<div class="container">
+
+	        <!-- Portfolio Item Heading -->
+	        <div class="row">
+	            <div class="col-md-7">
+	                <h1 class="page-header" >{{movie['name']}}
+	                    <small>small</small>
+	                </h1>
+	                <hr>
+	                <hr>
+	            </div>
+	            <div class="col-md-5">
+	                <h3>Predicted Revenue -
+	                    <em>Predicted Revenue</em>
+	                </h3>
+	                <h3>Actual Revenue -
+	                    <em>{{movie['revenue']}}</em>
+	                </h3>
+	                <hr>
+	            </div>
+	            
+	        </div>
+	        <!-- /.row -->
+
+	        <!-- Portfolio Item Row -->
+	        <div class="row">
+
+	            <div class="col-md-5">
+	                <img class="img-responsive" src={{movie['poster']}} alt="">
+	            </div>
+
+	            <div class="col-md-7">
+	                <h4>Description</h4>
+	                <p>{{movie['overview']}}</p>
+
+	               	<div class="row" style="">
+
+	               	<div class="col-md-6">
+
+	               		<div id="Actors" >
+
+	               			<div>
+	                			<h1>Actors</h1>
+					        	<ul class="list-group" id="actor_ul">
+					        	</ul>
+
+					        	<div class="form-group">
+					          		<input id="actor-main-input" type="text" class="form-control" placeholder="Actor name">
+					        	</div>
+
+					        	<button type="button" class="btn btn-success" id="actor-main-button">Add Actor</button>
+					      </div>
+
+					   
+
+					     <!-- <div class="modal fade" id="editModal" role="dialog">
+					        <div class="modal-dialog" role="document">
+					          <div class="modal-content">
+					            <div class="modal-header">
+					              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					              <h4 class="modal-title">Edit</h4>
+					            </div>
+
+					            <div class="modal-body">
+					              <input type="text" class="form-control" id="edit-input">
+					            </div>
+
+					            <div class="modal-footer">
+					              <button type="button" class="btn btn-primary" id="edit-button" data-dismiss="modal">Save changes</button>
+					            </div>
+
+					          </div>
+					        </div>
+			
+					      </div>-->
+
+					  </div><!-- actors -->
+
+
+					 </div><!-- col md 6 -->
+
+					 <div class="col-md-6">
+					   <div id="Crew">
+
+	               			<div>
+	                			<h1>Crew</h1>
+					        	<ul class="list-group" id="crew_ul">
+					        	</ul>
+
+					        	<div class="form-group">
+					          		<input id="crew-main-input" type="text" class="form-control" placeholder="Crew Member name">
+					        	</div>
+
+					        	<button type="button" class="btn btn-success" id="crew-main-button">Add Actor</button>
+					      </div>
+					  </div>
+
+					</div>
+
+
+<!--
+	               		<div id="Crew">
+
+	               			<div>
+	                			<h1>Crew</h1>
+					        	<ul class="list-group ">
+					        	</ul>
+
+					        	<div class="form-group">
+					          		<input id="main-input" type="text" class="form-control" placeholder="Write up something">
+					        	</div>
+
+					        	<button type="button" class="btn btn-success" id="main-button">Add A Task</button>
+					      </div>
+
+					      <div class="modal fade" id="editModal" role="dialog">
+					        <div class="modal-dialog" role="document">
+					          <div class="modal-content">
+					            <div class="modal-header">
+					              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					              <h4 class="modal-title">Edit</h4>
+					            </div>
+
+					            <div class="modal-body">
+					              <input type="text" class="form-control" id="edit-input">
+					            </div>
+
+					            <div class="modal-footer">
+					              <button type="button" class="btn btn-primary" id="edit-button" data-dismiss="modal">Save changes</button>
+					            </div>
+
+					          </div>
+					        </div>
+			
+					      </div>
+
+					  </div>--><!-- crew -->
+
+
+					
+
+
+
+
+
+
+
+
+
+
+					</div><!-- roww -->
+					<div class="row">
+						<div class="col-md-6">
+					   <div id="Studios">
+
+	               			<div>
+	                			<h1>Studios</h1>
+					        	<ul class="list-group" id="studios_ul">
+					        	</ul>
+
+					        	<div class="form-group">
+					          		<input id="studios-main-input" type="text" class="form-control" placeholder="Studio name">
+					        	</div>
+
+					        	<button type="button" class="btn btn-success" id="studios-main-button">Add Studio</button>
+					      </div>
+					  </div>
+
+					</div>
+<div class="col-md-6">
+					   <div id="Characters">
+
+	               			<div>
+	                			<h1>Characters</h1>
+					        	<ul class="list-group" id="characters_ul">
+					        	</ul>
+
+					        	<div class="form-group">
+					          		<input id="characters-main-input" type="text" class="form-control" placeholder="Character name">
+					        	</div>
+
+					        	<button type="button" class="btn btn-success" id="characters-main-button">Add Character</button>
+					      </div>
+					  </div>
+
+					</div>
+
+
+					</div><!-- row -->
+					<div class="row">
+						<div class="col-md-6">
+					   <div id="Keywords">
+
+	               			<div>
+	                			<h1>Keywords</h1>
+					        	<ul class="list-group" id="keywords_ul">
+					        	</ul>
+
+					        	<div class="form-group">
+					          		<input id="keywords-main-input" type="text" class="form-control" placeholder="Write up something">
+					        	</div>
+
+					        	<button type="button" class="btn btn-success" id="keywords-main-button">Add Keyword</button>
+					      </div>
+					  </div>
+
+					</div>
+					<div class="col-md-6">
+						<hr>
+	        <form method="post" action="/movie?number=843"  id="db_post" name="db_view">
+<h1>Budget</h1>
+<br>
+       {% for field in form2 %}
+            {{field}}
+        {% endfor %}
+        <br style="margin-bottom:4px">
+        <input type=submit value="Submit" class="btn-lg btn-success" id="submit_movie">
+
+		</form>  
+	</div><!--mid6-->
+
+					</div>
+				</div>
+
+
+	        </div>
+	        <!-- /.row -->
+
+
+	        <!-- Related Projects Row -->
+	        <div class="row">
+
+	            <div class="col-lg-12">
+	                <h3 class="page-header">Movies with similar revenues</h3>
+	            </div>
+	               {% for rev in similar %}
+            			<div class="col-sm-3 col-xs-6">
+	                	<a href={{"/movie?number="+rev[0]}}>
+	                    <img class="img-responsive portfolio-item" src={{rev[1]}} alt="">
+	                	</a>
+	            	</div>
+        			{% endfor %}
+
+	         
+
+	        </div>
+	        <!-- /.row -->
+
+	        <hr>
+
+
+	    </div>
+
+				
+
+	{% endblock %}  

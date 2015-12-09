@@ -1,0 +1,72 @@
+{% extends "base.html" %} {% import 'macros.html' as macros %} 
+{% block content %}
+
+<div class="container">
+
+        <!-- Page Header -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Select a movie
+                    <small> <!--<form style="margin:0"><input placeholder="" style>  <button type="button" class="btn btn-danger">Search</button></form>--><a href="/movie"> Or create your own</a></small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        {% for row in results %}
+         <div class="row">
+            {% for movie in row %}
+                <div class="col-md-4 portfolio-item">
+                <a href={{"/movie?number="+movie.id.cdata}}>
+                    <img class="img-responsive" src={{movie.posterurl.cdata}} alt="">
+                </a>
+                <h3>
+                    <a href={{"/movie?number="+movie.id.cdata}}>{{movie.name.cdata}}</a>
+                </h3>
+                <p>{{movie.overview.cdata}}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+       
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+                    <li>
+                        <a href={{prev}}>&laquo;</a>
+                    </li>
+                    {% for page in pages %}
+                        <li class={{page[2]}}>
+                            <a href={{page[1]}}>{{page[0]}}</a>
+                        </li>
+                    {% endfor %}
+                    <li>
+                        <a href={{next}}>&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright CIS 450 Project</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+{% endblock %} 

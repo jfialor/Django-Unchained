@@ -25,11 +25,31 @@
 
     {{ form2.hidden_tag() }} 
     
-    {{ macros.render_field(form2.numRetrieve, placeholder='Enter sql query', type='dbNotes', label_visible=false) }}
+    {{ macros.render_field(form2.numRetrieve, placeholder='Enter a movie id for predicted revenue', type='dbNotes', label_visible=false) }}
     
     <div align="center"><button type="submit" class="btn btn-primary">Submit</button></p></div>
 
 </form>   
+
+<form method="post" action="/index"  id="db_post" name="db_view">
+
+    {{ form3.hidden_tag() }} 
+    
+    {{ macros.render_field(form3.numRetrieve22, placeholder='Enter revenue to retrieve similar movies', type='dbNotes', label_visible=false) }}
+    
+    <div align="center"><button type="submit" class="btn btn-primary">Submit</button></p></div>
+
+</form>  
+
+<form method="post" action="/index"  id="db_post" name="db_view">
+
+    {{ form4.hidden_tag() }} 
+    
+    {{ macros.render_field(form4.numRetrieve23, placeholder='Enter movie id to retrieve movie', type='dbNotes', label_visible=false) }}
+    
+    <div align="center"><button type="submit" class="btn btn-primary">Submit</button></p></div>
+
+</form>  
 
 </div>
 
