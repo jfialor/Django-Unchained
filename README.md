@@ -1,4 +1,4 @@
-# Django-Unchained
+# MovieBall
 
 The application is composed of a main file, application.py and a folder for other dependenceis, called applicatio
 There is also a templates folder that contains all the html and javascript needed to run the site.
