@@ -19,4 +19,4 @@ The application.py file contains two main route functions, movie() and select().
 
 The site is presently hosted at http://54.173.17.142/
 
-2015. CIS550project MovieBall.
+CIS550project MovieBall. 2015.
