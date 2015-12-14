@@ -279,6 +279,7 @@ d.parent(".dropdown-menu").length&&(d=d.closest("li.dropdown").addClass("active"
 
 	function storeToLocal(key, items){
 		window.storage[key] = JSON.stringify(items);
+	
 		$('#field').val(JSON.stringify(window.storage))
 	}
 
